@@ -35,11 +35,12 @@ Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
 
-Route::get('/project/{id}',function($id){
-/*	var_dump($id);*/
+/*Route::get('/project/{id}',function($id){
+var_dump($id);
 return view('posts.cardview');
 
 });
 Route::post('/project/sortcards',function(){
 
-});
+});*/
+Route::resource('cards','CardsController');

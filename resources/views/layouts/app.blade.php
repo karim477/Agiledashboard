@@ -56,8 +56,9 @@
                     <ul class="nav navbar-nav">
                             <li class="nav-item"><a href="/" class="nav-link active">Personal</a></li>
                           <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
-                         <li class="nav-item"><a href="/posts" class="nav-link">Cards</a></li>
+                         <li class="nav-item"><a href="/posts" class="nav-link">Projects</a></li>
                          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->

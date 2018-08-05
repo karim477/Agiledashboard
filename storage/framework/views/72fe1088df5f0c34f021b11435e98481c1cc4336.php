@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
 
- <h1>Cards</h1>
+ <h1>Projects</h1>
 <?php if(count($posts) > 0): ?>
 	<?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 

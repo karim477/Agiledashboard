@@ -2,7 +2,7 @@
 
 @section('content')
 
- <h1>Cards</h1>
+ <h1>Projects</h1>
 @if(count($posts) > 0)
 	@foreach($posts as $post)
 
