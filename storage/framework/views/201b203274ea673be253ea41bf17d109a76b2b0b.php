@@ -76,8 +76,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="/dashboard">Dashboard</a></li>
-                                    <li>
-                                        <a href="<?php echo e(route('logout')); ?>"
+                                    <li><a href="<?php echo e(route('logout')); ?>"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
@@ -103,10 +102,17 @@
     </div>
 
     <!-- Scripts -->
-     
-  <!--   <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <!--  <script src="<?php echo e(asset('js/app.js')); ?>"></script> -->
+  <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+$(document).ready(function(){
+    $(".dropdown-toggle").dropdown();
+});
+</script>
+   <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('article-ckeditor');
-    </script> -->
+    </script> 
 </body>
 </html>
