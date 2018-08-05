@@ -15,7 +15,7 @@
                     @endif
 
                    <!--  choose from the list of project you have -->
-                    <a href="/posts/create" class="btn btn-primary">Create Card</a>
+                    <a href="/posts/create" class="btn btn-primary">Create Project</a>
                     <h3>your cards</h3>
                     @if(count($posts)>0)
                     <table class="table table-striped">

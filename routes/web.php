@@ -45,5 +45,5 @@ return view('posts.cardview');
 });
 Route::post('/project/sortcards',function(){
 
-});*/
-Route::resource('cards','CardsController');
+});*//*
+Route::resource('cards','CardsController');*/

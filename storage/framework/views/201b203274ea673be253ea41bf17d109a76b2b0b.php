@@ -56,8 +56,9 @@
                     <ul class="nav navbar-nav">
                             <li class="nav-item"><a href="/" class="nav-link active">Personal</a></li>
                           <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
-                         <li class="nav-item"><a href="/posts" class="nav-link">Projects</a></li>
+                         <li class="nav-item"><a href="/posts" class="nav-link">Projects List</a></li>
                          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                         <li class="nav-item"><a href="/cards" class="nav-link">cards tap to be removed</a></li>
                         
                     </ul>
 
@@ -65,7 +66,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                             <li class="nav-item" ><a href="/Myhomepage" class="nav-link">My account</a></li>
-                <li><a href="/posts/create">Create Card</a></li>
+                <li><a href="/posts/create">Create Project</a></li>
                         <?php if(Auth::guest()): ?>
                             <li><a href="<?php echo e(route('login')); ?>">Login</a></li>
                             <li><a href="<?php echo e(route('register')); ?>">Register</a></li>
