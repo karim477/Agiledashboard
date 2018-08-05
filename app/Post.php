@@ -19,5 +19,9 @@ class Post extends Model
 
 		}
 
+	public function cards(){
+
+        return $this->hasMany('App\Card');
+    }
 
 }

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-@extends('layouts.app')
 
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
        <h1>My Profile </h1>
        <p>This is your profile</p>
  
@@ -131,8 +131,10 @@
 		</div>
 		
     </div> <!-- /container -->
-       @endsection
+       <?php $__env->stopSection(); ?>
 
 </footer>
   
 </html>
+
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -15,8 +15,11 @@ class CreateCardsTable extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Cardtitle');
-            $table->mediumText('CardBody');
+            $table->string('title');
+            $table->mediumText('body');
+            $table->integer('post_id');
+            $table->string('status');
+            $table->integer('order');
             $table->timestamps();
         });
     }

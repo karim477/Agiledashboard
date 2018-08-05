@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\storage;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Card;
 
 class PostsController extends Controller
 { 
@@ -93,7 +94,12 @@ class PostsController extends Controller
     {
         
         $post = Post::find($id);
-        return view('posts.show')->with('post',$post);
+        $cards = $post->cards()->get();
+        /*var_dump($post->cards()->get()->toArray());*/
+        return view('posts.show')->with([
+            'post' => $post,
+            'cards' => $cards
+        ]);
     }
 
     /**
@@ -174,4 +180,37 @@ class PostsController extends Controller
         $post->delete();
         return redirect('/posts')->with('success','Card Deleted');
     }
+
+    public function createCard($id) {
+        $post = Post::find($id);
+
+        if ($post === null) {
+            //... Post couldn't be found
+        }
+
+        return view('posts.create-card')->with([
+            'post' => $post
+        ]);
+    }
+
+    public function storeCard(Request $request, $id) {
+        $post = Post::find($id);
+
+        $this->validate($request,[
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        $card = new Card;
+        $card->title = $request->input('title');
+        $card->body = $request->input('body');
+        $card->post_id = $post->id;
+        $card->status = 'TODO';
+        $order->order = 0;
+        $card->save();
+
+        return redirect("/posts/{$id}")->with('success', 'Card Created');
+    }
 }
+
+

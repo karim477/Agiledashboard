@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="<?php echo e(app()->getLocale()); ?>">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title><?php echo e(config('app.name', 'Laravel')); ?></title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
     <style>
        
         #project .card {
@@ -47,7 +47,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}"> <img style="width: 32px;,height: 32px;" src="https://vignette.wikia.nocookie.net/logopedia/images/c/c8/Orange_logo.svg/revision/latest?cb=20131215194631"> 
+                    <a class="navbar-brand" href="<?php echo e(url('/')); ?>"> <img style="width: 32px;,height: 32px;" src="https://vignette.wikia.nocookie.net/logopedia/images/c/c8/Orange_logo.svg/revision/latest?cb=20131215194631"> 
                     </a>
                 </div>
 
@@ -67,43 +67,44 @@
                         <!-- Authentication Links -->
                             <li class="nav-item" ><a href="/Myhomepage" class="nav-link">My account</a></li>
                 <li><a href="/posts/create">Create Project</a></li>
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
+                        <?php if(Auth::guest()): ?>
+                            <li><a href="<?php echo e(route('login')); ?>">Login</a></li>
+                            <li><a href="<?php echo e(route('register')); ?>">Register</a></li>
+                        <?php else: ?>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="/dashboard">Dashboard</a></li>
-                                    <li><a href="{{ route('logout') }}"
+                                    <li><a href="<?php echo e(route('logout')); ?>"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
+                                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                            <?php echo e(csrf_field()); ?>
+
                                         </form>
                                     </li>
                                 </ul>
                             </li>
-                        @endif
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
         </nav>
           
             <div class="container">
-              @include('inc.messages')
-             @yield('content')
+              <?php echo $__env->make('inc.messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+             <?php echo $__env->yieldContent('content'); ?>
     </div>
     </div>
 
     <!-- Scripts -->
-    <!--  <script src="{{ asset('js/app.js') }}"></script> -->
+    <!--  <script src="<?php echo e(asset('js/app.js')); ?>"></script> -->
   <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>

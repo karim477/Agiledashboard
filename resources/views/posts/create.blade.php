@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container">
- <h1>Create Card</h1>
+ <h1>Create Project</h1>
+ <p>Please Enter the projects details</p>
 
  	{!! Form::open(['action' => 'PostsController@store','method' => 'POST','enctype'=>'multipart/form-data']) !!}
   	<div class="forom-group">

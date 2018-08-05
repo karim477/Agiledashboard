@@ -12,4 +12,11 @@ class Card extends Model
     public $primaryKey = 'id';
 
     public $timestamps = true;
+
+
+	public function post(){
+
+		return $this->belongsTo('App\Post');
+
+	}
 }

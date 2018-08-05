@@ -31,6 +31,9 @@ Route::get('/services','PagesController@services');
 Route::get('/Myhomepage','PagesController@Myhomepage');
 
 Route::resource('posts','PostsController');
+Route::get('/posts/{id}/create-card','PostsController@createCard');
+Route::post('/posts/{id}/store-card','PostsController@storeCard');
+
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');

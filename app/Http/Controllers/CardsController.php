@@ -38,6 +38,11 @@ class CardsController extends Controller
     public function store(Request $request)
     {
         //
+        $card = new Card;
+        $card->title = $request->input('title');
+        $card->body = $request->input('body');
+        $card->post_id = 
+        $card->save();
     }
 
     /**
